@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #define MAXS 101
 
-// Stack - linked list implementation
+//Stack-linked list implementation
 
 struct Node{
 
