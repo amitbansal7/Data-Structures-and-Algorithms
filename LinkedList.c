@@ -9,6 +9,8 @@ struct Node
 };
 struct Node* head;
 
+//Linked List
+
 void insertatbeg(int x)
 {
 	struct Node* temp;
