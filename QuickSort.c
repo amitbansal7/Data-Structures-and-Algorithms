@@ -1,4 +1,5 @@
 #include "stdio.h"
+//Quick Sort
 void swap(int *p,int *q)
 {
 	int temp;
