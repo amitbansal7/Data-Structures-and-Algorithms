@@ -6,7 +6,7 @@ struct Node
 	int data;
 	struct Node* next;
 };
-
+//Sort a linked list using bubble sort
 struct Node* insertatend(struct Node* head,int n)
 {
 	struct Node*temp,*p;
