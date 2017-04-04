@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct Activity
 {
 	int start;
 	int finish;
 };
+
+// Greedy Algorithms - Activity Selection problem
 
 int compare(const void *s1, const void *s2)
 {
