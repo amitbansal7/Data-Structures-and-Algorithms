@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #define MAXS 101
 
-// reverse a string using stack & linked list
+//reverse a string using stack & linked list
 struct Node{
 	char data;
 	struct Node* next;
