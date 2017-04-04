@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//adjacency matrix representation of graph
 struct AdjListNode
 {
 	int dest;
