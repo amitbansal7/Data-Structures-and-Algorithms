@@ -1,11 +1,10 @@
 #include "stdio.h"
-
-
 struct Node
 {
 	int data;
 	struct Node* next;
 };
+//Merge Two sorted Linked List
 
 struct Node* insertatend(struct Node* head,int n)
 {
