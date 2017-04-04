@@ -10,7 +10,7 @@ struct Node
 	struct Node* right;
 };
 
-
+// Check if a tree is binary search tree or not
 struct Node* Newnode(int n)
 {
 	struct Node* temp;
