@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
-
+//Doubly Linked List
 struct Node
 {
 	struct Node* prev;
