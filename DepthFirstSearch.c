@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "stdlib.h"
-
+//Depth First Search
 struct Graph
 {
 	int v;
