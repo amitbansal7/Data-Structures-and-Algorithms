@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Reference GFG and NPTEL
+//Kruskal’s Minimum Spanning Tree Algorithm
 
 struct Edge
 {
