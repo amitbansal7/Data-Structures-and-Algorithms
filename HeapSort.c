@@ -1,5 +1,5 @@
 #include "stdio.h"
-
+//Heap Sort
 void swap(int *a,int *b)
 {
 	int *temp;
