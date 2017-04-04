@@ -6,7 +6,7 @@ struct bstnode{
 	struct bstnode *left;
 	struct bstnode *right;
 };
-
+//Find Height of a binary Search Tree.
 struct bstnode* newnode(int n)
 {
 	struct bstnode* temp;
