@@ -8,7 +8,7 @@ struct Node
 	struct Node* left;
 	struct Node* right;
 };
-
+//Insertion and deletion in AVL Tree
 struct Node* NewNode(int data)
 {
 	struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
