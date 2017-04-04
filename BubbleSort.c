@@ -1,5 +1,5 @@
 #include "stdio.h"
-
+//Bubble Sort
 void sort(int A[],int n)
 {
 	int i,j,temp;
