@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-
+// Merge Sort
 void merge(int A[],int *L,int *R,int nl,int nr)
 {
 	int i,j,k;
