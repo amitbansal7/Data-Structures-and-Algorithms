@@ -3,7 +3,6 @@
 
 // Adding two numbers represented by linked lists and storing 
 // result in a linked list
-
 struct Node
 {
 	int data;
