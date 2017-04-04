@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//Insertion and deletion in Binary Search Tree
 struct Node
 {
 	struct Node* left;
