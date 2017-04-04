@@ -8,6 +8,8 @@ struct Node
 };
 struct Node *front,*rear;
 
+// Linked List implementation on Queues.
+
 void enqueue(int x)
 {
 	// this operation will be performed in constant time ie. O(1)
