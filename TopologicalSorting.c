@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Topological sorting
 // reference GFG and nptel
 
 struct Stack
