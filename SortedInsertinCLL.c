@@ -6,6 +6,8 @@ struct Node
 	struct Node* next;
 };
 
+//	Sorted insert in circular linked list
+
 void traverse(struct Node* head)
 {
 	
