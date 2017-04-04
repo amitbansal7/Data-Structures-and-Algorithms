@@ -7,6 +7,8 @@ struct Node
 	struct Node* next;
 };
 
+// Delete a Node in doubly linked list
+
 struct Node* push(struct Node* head,int data)
 {
 	struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
