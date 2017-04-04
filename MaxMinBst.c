@@ -10,6 +10,8 @@ struct bstNode
 	struct BstNode* right;
 };
 
+// Find Max and Min in a BST
+
 struct bstNode* Newnode(int n)
 {
 	struct bstNode* temp;
