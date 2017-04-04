@@ -6,6 +6,7 @@ struct Node
 	int data;
 	struct Node* next;
 };
+//Merge Two Sorted Linked List
 
 struct Node* mergeSortedlist(struct Node* a,struct Node* b)
 {
