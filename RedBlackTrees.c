@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 //CLRS 
+//Insertion and Deletion in a Red Black Tree
 enum type {RED,BLACK};
 
 struct Node
