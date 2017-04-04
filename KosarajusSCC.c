@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 //Kosaraju's algorithm for strongly connected components.
-
 struct Graph
 {
 	int v;
