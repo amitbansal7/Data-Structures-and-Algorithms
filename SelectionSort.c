@@ -1,5 +1,6 @@
 #include "stdio.h"
 
+//Selection Sort
 void sort(int A[],int n)
 {
 	int k,l,j,temp;
