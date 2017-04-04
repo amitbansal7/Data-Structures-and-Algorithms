@@ -5,6 +5,8 @@ int A[10];
 int front=-1;
 int rear = -1;
 
+//Queue implementation using Arrays.
+
 bool isEmpty()
 {
 return (front == -1 && rear == -1) ? true : false;
