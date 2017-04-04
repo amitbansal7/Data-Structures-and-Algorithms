@@ -6,6 +6,8 @@ struct Node
     struct Node* next;
 };
 
+//Priority Queues
+
 struct Node* head = NULL;
 
 
