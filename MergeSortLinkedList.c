@@ -5,7 +5,6 @@ struct Node
 	int data;
 	struct Node* next;
 };
-
 //Sort a linked list using merge sort
 
 struct Node* insertatend(struct Node* head,int n)
