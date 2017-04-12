@@ -168,11 +168,23 @@ int isInMinHeap(struct MinHeap* minHeap, int v)
 		return 0;
 }
 
-void printarr(int dist[], int n)
+void printpath(int parent[], int v)
 {
-	printf("Vertex   distance from Source \n");
+	if(parent[v]==v)
+		return;
+	printpath(parent,parent[v]);
+	printf("%d->",parent[v]);
+}
+
+void printarr(int dist[], int n,int parent[])
+{
+	printf("Vertex   distance from Source   Path\n");
 	for(int i=0; i<n ;i++)
-		printf("%d \t\t%d  \n",i,dist[i]);
+	{
+		printf("%d \t\t%d   \t\t",i,dist[i]);
+		printpath(parent,i);
+		printf("%d\n",i);
+	}
 }
 
 void dijkstra(struct Graph* graph, int src)
@@ -181,6 +193,8 @@ void dijkstra(struct Graph* graph, int src)
 	struct MinHeap* minHeap = createMinHeap(V);
 	int dist[V];
 	minHeap->size = V;
+	int parent[V];
+	parent[src] = src;
 
 	for(int v=0;v<V;v++)
 	{
@@ -204,11 +218,12 @@ void dijkstra(struct Graph* graph, int src)
 			if(isInMinHeap(minHeap,v) && dist[u]!=INT_MAX && dist[u]+crawl->weight < dist[v])
 			{
 				dist[v] = crawl->weight + dist[u];
+				parent[v] = u;
 				decreaseKey(minHeap,v,dist[v]);
 			}
 		}
 	}
-	printarr(dist,V);
+	printarr(dist,V,parent);
 }
 int main()
 {
@@ -232,20 +247,21 @@ int main()
 	AddEdge(graph, 7, 8, 7);
 	
 	dijkstra(graph,1);
+
 	/*
 	Output
 
-    Vertex   distance from Source 
-    0 		4  
-    1 		0  
-    2 		8  
-    3 		15  
-    4 		22  
-    5 		12  
-    6 		12  
-    7 		11  
-    8 		10  
-	
+	Vertex   distance from Source   Path
+	0 		4   		1->0
+	1 		0   		1
+	2 		8   		1->2
+	3 		15   		1->2->3
+	4 		22   		1->2->5->4
+	5 		12   		1->2->5
+	6 		12   		1->7->6
+	7 		11   		1->7
+	8 		10   		1->2->8
+
 	*/
 	return 0;
 }
