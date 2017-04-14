@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 struct Activity
 {
 	int start;
 	int finish;
 };
-
-// Greedy Algorithms - Activity Selection problem
 
 int compare(const void *s1, const void *s2)
 {
@@ -21,6 +20,7 @@ int compare(const void *s1, const void *s2)
 void MaxActivities(struct Activity A[],int n)
 {
 	qsort(A,n,sizeof(struct Activity),compare);
+	// Sort activities in descending order according to their finishing time.
 
 	int i=0,j;
 
@@ -31,6 +31,7 @@ void MaxActivities(struct Activity A[],int n)
 	{
 		if(A[j].start >= A[i].finish)
 		{
+			// Select Activities whose finish time is less than or equal to staring time of next activity.
 			printf("(%d,%d), ",A[j].start,A[j].finish);
 			i = j;
 		}
