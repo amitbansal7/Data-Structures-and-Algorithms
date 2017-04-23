@@ -85,6 +85,12 @@ Greedy Algorithms
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.Minimize Lateness problem  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Huffman Coding  
 
+Dynamic Programming  
+----------------
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.Rod Cutting Problem  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.Knapsack Problem  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.Fibonnaci Numbers  
+
 STL - This folder contains some algorithms rewritten in C++ using Standard Template Library.  
 ---------------------------------------------------------------------------------------------
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breadth First Search  
