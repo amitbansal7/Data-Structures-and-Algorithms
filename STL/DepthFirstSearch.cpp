@@ -22,17 +22,25 @@ void DFS(vector <int >adj[],int s, bool visited[])
 			DFS(adj,*it,visited);
 
 }
+void addEdge(vector <int > adj[],int src, int dest)
+{
+	adj[src].push_back(dest);
+	adj[dest].push_back(src);
+}
+
 int main(int argc, char const *argv[])
 {
 	int v = 5;
 
 	vector<int > adj[v];
 
-	adj[1].push_back(0);
-	adj[0].push_back(2);
-	adj[2].push_back(1);
-	adj[0].push_back(3);
-	adj[3].push_back(4);
+	addEdge(adj, 0, 1);
+	addEdge(adj, 0, 4);
+	addEdge(adj, 1, 2);
+	addEdge(adj, 1, 3);
+	addEdge(adj, 1, 4);
+	addEdge(adj, 2, 3);
+	addEdge(adj, 3, 4);
 
 	bool visited[v];
 	Mset(visited,0);
