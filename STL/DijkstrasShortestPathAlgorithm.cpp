@@ -7,7 +7,7 @@
 #define Mset(p,i) memset(p,i,sizeof(p))
 #define mlc(t,n) (t *)malloc(sizeof(t)*n)
 #define NIL -1
-# define INF 0x3f3f3f3f
+#define INF 0x3f3f3f3f
 template <typename T>
 T Max(T x, T y){x>y?x:y;}
 using namespace std;
