@@ -9,7 +9,7 @@ void printResult(char result[],int len)
 	printf("\n");
 }
 
-void Permutation(char c[],int count[],char result[],int depth,int len)
+void Permutation(char c[],int count[],char result[],int depth,int len,int cs)
 {
 	if(depth == len)
 	{
@@ -17,13 +17,13 @@ void Permutation(char c[],int count[],char result[],int depth,int len)
 		return;
 	}
 
-	for(int i=0;i<len;i++)
+	for(int i=0;i<cs;i++)
 	{
 		if(count[i] != 0)
 		{
 			result[depth] = c[i];
 			count[i]--;
-			Permutation(c,count,result,depth+1,len);
+			Permutation(c,count,result,depth+1,len,cs);
 			count[i]++;
 		}
 	}
@@ -56,8 +56,8 @@ void StringPermutation(char exp[])
 		cs++;
 	}
 
-	char result[cs];
-	Permutation(c,oc,result,0,cs);
+	char result[l+1];
+	Permutation(c,oc,result,0,l,cs);
 }
 
 int main()
