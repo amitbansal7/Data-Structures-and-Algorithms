@@ -1,5 +1,6 @@
-/* Amit Bansal - amitbansal7 */
+/* Amit Bansal - @amitbansal7 */
 #include <bits/stdc++.h>
+#include <string>
 #define lli long long int
 #define llu unsigned long long int
 #define S(x) scanf("%d",&x)
@@ -7,90 +8,82 @@
 #define Mset(p,i) memset(p,i,sizeof(p))
 #define mlc(t,n) (t *)malloc(sizeof(t)*n)
 #define NIL -1
-template <typename T>
-T Max(T x, T y){x>y?x:y;}
+#define INF 0x3f3f3f3f
+#define TC int testcase; S(testcase); while(testcase--)
+#define Pi 3.14159
 using namespace std;
 
-struct DJSet
+struct DisjointSet
 {
-	int n;
+	int v;
 	int *parent;
-	int *rank;	
+	int *rank;
 };
 
-struct DJSet* createDJSets(int n)
+struct DisjointSet* CreateSet(int v)
 {
-	struct DJSet *sets = mlc(struct DJSet,1);
+	struct DisjointSet* Set = (struct DisjointSet*)malloc(sizeof(struct DisjointSet));
+	Set->v = v;
+	Set->parent = (int *)malloc(sizeof(int)*v);
+	Set->rank = (int *)malloc(sizeof(int)*v);
 
-	sets->n = n;
-	sets->parent = mlc(int, n+1);
-	sets->rank = mlc(int, n+1);
-
-	for(int i=0;i<=n;i++)
+	for(int i=0;i<v;i++)
 	{
-		sets->parent[i] = i;
-		sets->rank[i] = 0;
+		Set->parent[i] = i;
+		Set->rank[i] = 0;
 	}
-
-	return sets;
+	return Set;
 }
 
-int find(struct DJSet* sets, int u)
+int find(int u,struct DisjointSet* Set)
 {
-	if(u!= sets->parent[u])
-		sets->parent[u] = find(sets,sets->parent[u]);
+	if(u != Set->parent[u])
+		Set->parent[u] =  find(Set->parent[u],Set);
 
-	return sets->parent[u];
+	return Set->parent[u];
 }
 
-void merge(struct DJSet* sets,int u,int v)
+void merge(int x,int y,struct DisjointSet* Set)
 {
-	int x = find(sets,u);
-	int y = find(sets,v);
-
-	if(sets->rank[x] > sets->rank[y])
-		sets->parent[y] = x;
-
+	if(Set->rank[x] > Set->rank[y])
+		Set->parent[y] = x;
 	else
-		sets->parent[x] = y;
+		Set->parent[x] = y;
 
-	if(sets->rank[x] == sets->rank[y])
-		sets->rank[y]++;
+	if(Set->rank[x] == Set->rank[y])
+		Set->rank[y]++;
 }
 
-int KruskalsMST(vector <pair<int ,pair<int, int> > >edges,int n)
+int KruskalMST(vector <pair<int ,pair<int, int> > >  edges, int v)
 {
-	int Mwt = 0;
-
+	int Minwt = 0;
 	sort(edges.begin(),edges.end());
-	struct DJSet* ds = createDJSets(n);
+	struct DisjointSet* Set = CreateSet(v);
 
-	vector <pair<int ,pair<int ,int > > >::iterator it;
+	vector<pair<int,pair<int,int> > > ::iterator it;
 
-	for(it=edges.begin();it != edges.end();it++)
+	for(it = edges.begin();it != edges.end();it++)
 	{
 		int u = (*it).second.first;
 		int v = (*it).second.second;
 
-		int su = find(ds,u);
-		int sv = find(ds,v);
+		int su = find(u,Set);
+		int sv = find(v,Set);
 
 		if(su!=sv)
 		{
+			Minwt += (*it).first;
 			printf("%d - %d\n",u,v);
-			Mwt += (*it).first;
-
-			merge(ds,su,sv);
+			merge(su,sv,Set);
 		}
 	}
-	return Mwt;
+	return Minwt;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	int v = 9;
-
-	vector <pair<int ,pair<int ,int> > > edges;
+	vector <pair<int,pair<int,int> > > edges;
 
 	edges.push_back(make_pair(4,make_pair(0,1)));
 	edges.push_back(make_pair(8,make_pair(0,7)));
@@ -107,7 +100,5 @@ int main(int argc, char const *argv[])
 	edges.push_back(make_pair(6,make_pair(6,8)));
 	edges.push_back(make_pair(7,make_pair(7,8)));
 
-	printf("\nMinimum weight - %d",KruskalsMST(edges,v));
-
-	return 0;
+	printf("Minimum wieght of MST is %d\n",KruskalMST(edges,v));
 }
