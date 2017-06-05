@@ -18,16 +18,6 @@ void addEdge(vector<pair<int,int> >adj[],int src,int dest,int weigth)
 	adj[dest].push_back(make_pair(src,weigth));
 }
 
-void printpath(int parent[],int u)
-{
-	if(u==parent[u])
-		return;
-
-	printpath(parent,parent[u]);
-	printf("%d->",parent[u]);
-
-}
-
 void PrimsMST(vector<pair<int, int> > adj[],int src,int v)
 {
 	priority_queue<pair<int,int> , vector<pair<int,int> > ,greater<pair<int,int> > >pq;
@@ -88,7 +78,7 @@ int main(int argc, char const *argv[])
     addEdge(adj,6, 7, 1);
     addEdge(adj,6, 8, 6);
     addEdge(adj,7, 8, 7);
-	
+
 	PrimsMST(adj,0,v);
 	return 0;
 }
