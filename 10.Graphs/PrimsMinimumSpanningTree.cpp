@@ -46,7 +46,7 @@ void PrimsMST(vector<pair<int, int> > adj[],int src,int v)
 
 			if(inMST[v] == false && key[v] > w)
 			{
-				inMST[v] = true;
+				key[v] = w;
 				pq.push(make_pair(key[v],v));
 				parent[v] = u;
 			}
