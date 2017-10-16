@@ -115,6 +115,9 @@ public:
     *Insert a string into trie
         name.insertKey("string");
 
+	*Search for a string(return boolean variable)
+		name.search("string")
+
     *Delete a string from trie
         name.deleteKey("string")
 
