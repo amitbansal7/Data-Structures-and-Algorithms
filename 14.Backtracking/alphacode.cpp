@@ -24,7 +24,10 @@ void solve(string &input, string &t, int i)
 		cout << t << endl;
 		return;
 	}
-
+	
+	if(input[i] == '0')
+		return;
+	
 	int a = input[i] - '0';
 	if (input[i] <= '9')
 	{
