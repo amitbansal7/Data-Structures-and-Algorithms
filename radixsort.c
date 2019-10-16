@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<math.h>
+int a[100],rem,larg,count=1,b[10],num,c[100],g,u=1,k,y,e1,f1,v,ym;
+int n,i,e,f,t;
+void main()
+{
+printf("enter the no.of elements");
+scanf("%d",&n);
+printf("enter the elements");
+for(i=0;i<n;i++)
+{
+    scanf("%d",&a[i]);
+}
+larg=a[0];
+for(i=1;i<n;i++)
+{
+    if(a[i]>larg)
+    {
+        larg=a[i];
+    }
+}
+rem=larg/10;
+while(rem>0)
+{
+    rem=rem/10;
+    count++;
+}
+while(u<=count)
+{
+for(i=0;i<10;i++)
+{
+    b[i]=0;
+}
+for(i=0;i<n;i++)
+{
+    if(u==1)
+    {
+        t=pow(10,u);
+    num=a[i]%(t);
+    b[num]++;
+}
+else{
+e=pow(10,u);
+f=pow(10,u-1);
+y=a[i]%(e);
+num=y/(f);
+b[num]++;
+}
+}
+for(i=1;i<10;i++)
+{
+   b[i]=b[i]+b[i-1];
+}
+for(i=n-1;i>=0;i--)
+{
+    v=pow(10,u);
+    if(u==1)
+    {
+    g=a[i]%v;
+    k=b[g];
+    c[k-1]=a[i];
+    b[g]--;
+}
+else
+{
+   e1=pow(10,u);
+f1=pow(10,u-1);
+ym=a[i]%(e1);
+g=ym/(f1);
+ k=b[g];
+    c[k-1]=a[i];
+    b[g]--;
+}
+}
+for(i=0;i<n;i++)
+{
+    a[i]=c[i];
+}
+u++;
+}
+for(i=0;i<n;i++)
+{
+    printf("%d ",a[i]);
+}
+}
